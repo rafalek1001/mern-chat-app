@@ -7,6 +7,12 @@ export default defineConfig({
   server: {
     watch: {
         usePolling: true
-    }
-  }
-})
+    },
+    port: 3000,
+    proxy: {
+      '/api': {
+        target: 'http://localhost:5000',
+      },
+    },
+  },
+});
